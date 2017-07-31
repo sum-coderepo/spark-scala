@@ -10,17 +10,24 @@ import org.apache.avro.generic.GenericDatumReader
 import org.apache.hadoop.fs.Path
 import org.apache.hadoop.conf.Configuration
 import org.apache.avro.mapred.FsInput
+import org.apache.avro.file.FileReader
+import org.apache.avro.Schema
 
 object GenerateAvroSchema {
   def main(args : Array[String]) = {
-     
-    val reader = new GenericDatumReader [_ <: D ]
-    val path = new Path(args(0)) 
-    val input = new FsInput(path , new Configuration)
-    val fileReader = DataFileReader.openReader(input, reader)
 
-        try
-        {
-            final Schema schema = fileReader.getSchema(); 
+    val reader: GenericDatumReader[Any] = new GenericDatumReader[Any]()
+    
+    // final Path path = new Path(args[0]);
+		// final FsInput input = new FsInput(path, new Configuration());
+    val input: File = new File(
+      "C:\\Users\\sumeet.agrawal\\workspace\\test.avro\\test.avro")
+    val fileReader: FileReader[Any] = DataFileReader.openReader(input, reader)
+    try {
+      val schema1: Schema = fileReader.getSchema
+      println(schema1)
+    } finally fileReader.close()
+    
+    
   }
-}
+  }
