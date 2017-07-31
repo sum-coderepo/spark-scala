@@ -1,5 +1,5 @@
 package com.common
-
+//Util class for all the functions
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.functions._
 
