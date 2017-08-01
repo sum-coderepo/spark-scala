@@ -17,7 +17,7 @@ trait Conf {
     val sc : org.apache.spark.sql.SparkSession
     
 }
-
+//test
 
 /**
   * allowMultipleContexts is set on true. But ideally every processing that needs a Spark context should use the same ETLConf object.

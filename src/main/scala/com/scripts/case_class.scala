@@ -37,6 +37,8 @@ object UsingOptions {
     val b = println(a.mass)
     val c = println(a.name)
     val d = println(a.satellites)
+    
+    println(newfunc(a))
   }
   
   
@@ -44,5 +46,11 @@ object UsingOptions {
     new Planet(nm,st,ms)
   }
   
+  def newfunc( test : Planet) : String = {
+    
+    val str = test.name
+    str
+    
+  }
   
 }
