@@ -1,2 +1,3 @@
 check file
 check file1
+check file3
