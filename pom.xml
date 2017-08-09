@@ -268,6 +268,5 @@
 			<artifactId>spark-streaming-kafka-0-10_2.11</artifactId>
 			<version>2.1.0</version>
 		</dependency>
-
 	</dependencies>
 </project>
