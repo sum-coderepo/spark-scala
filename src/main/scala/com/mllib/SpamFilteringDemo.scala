@@ -13,7 +13,7 @@ import org.apache.spark.ml.feature._
 import org.apache.spark.mllib.evaluation.MulticlassMetrics
 import org.apache.spark.sql.types._
 
-object SpamFilteringDemo1 {
+object SpamFilteringDemo {
   val customSchema = StructType(Array(
     StructField("RawLabel", StringType, true),
     StructField("SmsText", StringType, true)))
