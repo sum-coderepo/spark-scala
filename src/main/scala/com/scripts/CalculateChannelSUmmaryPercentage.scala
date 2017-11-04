@@ -19,7 +19,7 @@ object test {
       .format("com.databricks.spark.csv")
       .option("header", "true")
       .option("parserLib", "UNIVOCITY")
-      .load("C:\\Users\\sumeet.agrawal\\Desktop\\ddd\\Immunology-Subcat_To_Channel_Practice_2848.csv").toDF()
+      .load("C:\\Users\\sumeet.agrawal\\Desktop\\ddd\\file1.csv").toDF()
       
       df_subcat_channel.show()
       
