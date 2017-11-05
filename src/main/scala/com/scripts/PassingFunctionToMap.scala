@@ -29,6 +29,7 @@ object PassingFunctionToMap {
     }
     
     println(list3)
+    println(list2)
     list
   }
   
