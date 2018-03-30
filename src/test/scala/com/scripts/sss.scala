@@ -1,8 +1,8 @@
+package com.scripts
+
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 import org.scalatest.{BeforeAndAfter, FunSuite}
-import com.scripts.RDDAssignment
-import com.scripts.PageCounter
 
 
 
