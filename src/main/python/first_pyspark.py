@@ -3,7 +3,7 @@ from pyspark.sql import functions as F
 import sys
 
 def main():
-    spark = SparkSession.builder.enableHiveSupport().master("yarn").appName("first_app").getOrCreate()
+    spark = SparkSession.builder.enableHiveSupport().master("local").appName("first_app").getOrCreate()
 
     df = spark.sparkContext.parallelize([
         ['20170101', 258, 1003],

@@ -5,14 +5,15 @@ import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.types.StringType
 import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.sql.types.StructField
+import org.apache.spark.util.SizeEstimator
 import org.apache.spark.sql.Row
 
 object sample {
    val sc = SparkSession.builder
     .master("local")
     .appName("kmeans")
-    .config("spark.sql.warehouse.dir", "file:///C:/Users/sumeet.agrawal/workspace/Sumeet_Spark")
-    .enableHiveSupport()
+    .config("spark.sql.warehouse.dir", "file:///C:\\Users\\suagrawa\\workspace\\SCE_ENGG")
+   // .enableHiveSupport()
     .getOrCreate()
  def main(args: Array[String]) = {
 
@@ -24,6 +25,7 @@ val claimRDD1 = sc.sparkContext.parallelize(claimsData1)
 val claimRDDRow1 = claimRDD1.map(p => Row(p._1, p._2, p._3, p._4, p._5))
 val claimRDD2DF1 = sc.sqlContext.createDataFrame(claimRDDRow1, Claim1)
 
+   println(SizeEstimator.estimate(claimRDD2DF1))
 val l = List("allowed", "allowed1")
 val exprs = l.map((_ -> "sum")).toMap
 claimRDD2DF1.groupBy("pid").agg(exprs) show false
